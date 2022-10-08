@@ -1,5 +1,6 @@
 vim.o.relativenumber = true
 vim.o.number = true
+vim.api.nvim_command('autocmd BufWritePost *.bashrc :silent !source ~/.bashrc')
 vim.api.nvim_command('autocmd BufWritePost *.html :silent !xdotool search --class min windowactivate --sync \\%1 key F5 windowactivate $(xdotool getactivewindow)')
 vim.api.nvim_command('autocmd BufWritePost *.js :silent !xdotool search --class min windowactivate --sync \\%1 key F5 windowactivate $(xdotool getactivewindow)')
 vim.api.nvim_command('autocmd BufWritePost *.css :silent !xdotool search --class min windowactivate --sync \\%1 key F5 windowactivate $(xdotool getactivewindow)')
