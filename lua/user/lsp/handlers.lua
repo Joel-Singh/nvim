@@ -66,7 +66,7 @@ local function lsp_keymaps(bufnr)
   -- Find references
 	keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
   -- Open floating window for diagnostic (error or warning)
-	keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.formatting()<cr>", opts)
+	keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
   -- Format file
 	keymap(bufnr, "n", "<leader>li", "<cmd>LspInfo<cr>", opts)
   -- Get Lsp (Language server protocol) information
