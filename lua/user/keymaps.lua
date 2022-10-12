@@ -82,4 +82,4 @@ keymap("n", "<leader>du", "<cmd>lua require'dapui'.toggle()<cr>", opts)
 keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 -- Emmet.vim
-vim.api.nvim_command('let g:user_emmet_leader_key="<C-I>"')
+vim.api.nvim_command('let g:user_emmet_leader_key="<C-x>"')
