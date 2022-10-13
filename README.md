@@ -1,3 +1,9 @@
+Is a fork (I think thats the right word) of https://github.com/LunarVim/nvim-basic-ide but I don't know how to set it up as such. sorry.
+
+
+
+
+
 # A Basic Stable IDE config for Neovim
 
 > Why does this repo exist?
