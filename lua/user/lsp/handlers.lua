@@ -62,7 +62,7 @@ local function lsp_keymaps(bufnr)
   -- Hover
 	keymap(bufnr, "n", "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
   -- Go to implementation
-	keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+	keymap(bufnr, "n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
   -- Find references
 	keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
   -- Open floating window for diagnostic (error or warning)
