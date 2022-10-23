@@ -64,7 +64,7 @@ local function lsp_keymaps(bufnr)
   -- Go to implementation
 	keymap(bufnr, "n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
   -- Find references
-	keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+	keymap(bufnr, "n", "gK", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
   -- Open floating window for diagnostic (error or warning)
 	keymap(bufnr, "n", "<leader>lf", "<cmd>lua vim.lsp.buf.format({async = true})<cr>", opts)
   -- Format file
