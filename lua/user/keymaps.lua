@@ -63,6 +63,7 @@ keymap("n", "<leader>fh", ":lua require('telescope.builtin').find_files({cwd = '
 keymap("n", "<leader>fr", ":lua require('telescope.builtin').oldfiles()<CR>", opts)
 keymap("n", "<leader>fs", ":lua require('telescope.builtin').treesitter()<CR>", opts)
 keymap("n", "<leader>rr", ":lua require('telescope.builtin').command_history()<CR>", opts)
+keymap("n", "<leader>jl", ":lua require('telescope.builtin').jumplist()<CR>", opts)
 keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
