@@ -60,7 +60,7 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>fh", ":lua require('telescope.builtin').find_files({cwd = '~'})<CR>", opts)
-keymap("n", "<leader>fr", ":lua require('telescope.builtin').find_files({cwd = '/'})<CR>", opts)
+keymap("n", "<leader>fr", ":lua require('telescope.builtin').oldfiles()<CR>", opts)
 keymap("n", "<leader>fs", ":lua require('telescope.builtin').treesitter()<CR>", opts)
 keymap("n", "<leader>fg", ":Telescope live_grep<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects<CR>", opts)
