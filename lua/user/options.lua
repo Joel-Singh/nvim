@@ -2,6 +2,7 @@ vim.o.relativenumber = true
 vim.o.number = true
 vim.api.nvim_command('autocmd BufWritePost *.bashrc :silent !source ~/.bashrc')
 vim.api.nvim_command('autocmd BufWritePre * :exe \'norm m`\' | %s/\\s\\+$//eg | norm g``')
+vim.api.nvim_command(':nnoremap <silent> J :let p=getpos(\'.\')<bar>join<bar>call setpos(\'.\', p)<cr>') -- Stop the cursor from moving when joining lines
 vim.opt.backup = false                          -- creates a backup file
 vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 1                           -- more space in the neovim command line for displaying messages
