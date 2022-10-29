@@ -22,7 +22,7 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<C-c>", "<C-w>c", opts)
-keymap("n", "<leader>tn", ":tabnew %<CR>", opts)
+keymap("n", "<leader>tn", "<cmd>tabnew %<CR><C-o>zz", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize -2<CR>", opts)
