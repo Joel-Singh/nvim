@@ -88,3 +88,8 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 -- Emmet.vim
 vim.api.nvim_command('let g:user_emmet_leader_key="<C-x>"')
+
+-- Other
+-- The existence of vim close is read in bash rc
+keymap("n", "<leader>re", "<cmd>mksession! ~/.vim-session | ! rm /tmp/vim-close<cr> <cmd>qa<cr>", opts)
+keymap("n", "<leader>qu", "<cmd>mksession! ~/.vim-session | ! touch /tmp/vim-close<cr> <cmd>qa<cr>", opts)
