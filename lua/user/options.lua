@@ -3,6 +3,7 @@ vim.o.number = true
 vim.api.nvim_command('autocmd BufWritePost *.bashrc :silent !source ~/.bashrc') -- source bashrc on save
 vim.api.nvim_command('autocmd BufWritePre * :exe \'norm m`\' | %s/\\s\\+$//eg | norm g``') -- Remove trailing whitespace
 vim.api.nvim_command(':nnoremap <silent> J :let p=getpos(\'.\')<bar>join<bar>call setpos(\'.\', p)<cr>') -- Stop the cursor from moving when joining lines
+vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]] -- Auto format on save
 vim.opt.backup = false                          -- creates a backup file
 vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
 vim.opt.cmdheight = 1                           -- more space in the neovim command line for displaying messages
