@@ -28,19 +28,20 @@ local k = require('luasnip.nodes.key_indexer').new_key
 
 return {
   s(
-    { trig = 'test_auto_expand', snippetType = 'autosnippet' },
-    fmt(
+    { trig = 'docstring', snippetType = 'autosnippet' },
+    fmta(
       [[
-      fn {function_name}(
-        interaction: Single<&Interaction, (With<{btn_component}>, Changed<Interaction>)>,
-        {params}
-      ) {{
-        if let Interaction::Pressed = *interaction {{
-          {exit}
-        }}
-      }}
+"""
+<>
+
+Args:
+  <> (<>): <>
+
+Returns:
+    <>: <>
+"""
       ]],
-      { function_name = i(1), btn_component = i(2), params = i(3), exit = i(4) }
+      { i(1, 'description'), i(2, 'name'), i(3, 'type'), i(4, 'description'), i(5, 'type'), i(6, 'description') }
     )
   ),
 }
