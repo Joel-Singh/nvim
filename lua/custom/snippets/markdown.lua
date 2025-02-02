@@ -56,6 +56,7 @@ return {
   create_snippet('ellipses', [[\ldots]]),
   create_snippet('nchoosek', [[\binom{<>}{<>}]], { i(1), i(2) }),
   create_snippet('mm', [[$<>$]], { i(1) }),
+  create_snippet('-text', [[text]]),
   create_snippet('text', [[\text{ <> }]], { i(1) }),
   create_snippet('-set', [[set]]),
   create_snippet('set', [[\{<>\}]], { i(1) }),
@@ -72,7 +73,7 @@ return {
   create_snippet('lor', [[\lor]]),
   create_snippet('neg', [[\neg]]),
   create_snippet('implies', [[\implies]]),
-  create_snippet('biimplication', [[\iff]]),
+  create_snippet('biimplies', [[\iff]]),
   create_snippet('forall', [[\forall]]),
   create_snippet('exists', [[\exists]]),
   create_snippet('bar', [[|<>|]], { i(1) }),
@@ -81,5 +82,6 @@ return {
   create_snippet('-vec', [[vec]]),
   create_snippet('vec', [[\mathbf{<>}]], { i(1) }),
   create_snippet('cvec', [[\langle <>, <> \rangle]], { i(1), i(2) }),
+  create_snippet('img', [[![<>](<>){width=<> height=<>}]], { i(1, 'alt-text'), i(2, 'link'), i(3), i(4) }),
   s({ trig = 'textit', snippetType = 'autosnippet' }, fmta([[\textit{<text>}<end>]], { text = i(1), ['end'] = i(2) })),
 }
