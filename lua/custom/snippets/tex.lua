@@ -38,17 +38,17 @@ return {
   create_snippet('superset', [[\supseteq]]),
   create_snippet('excsubset', [[\subset]]),
   create_snippet('excsuperset', [[\supset]]),
-  create_snippet('union', [[\cup]]),
+  create_snippet('-union', [[\cup]]),
   create_snippet('intersection', [[\cap]]),
   create_snippet('naturalnumbers', [[\mathbb{N}]]),
   create_snippet('integers', [[\mathbb{Z}]]),
   create_snippet('realnumbers', [[\mathbb{R}]]),
   create_snippet('rationalnumbers', [[\mathbb{Q}]]),
-  create_snippet('pi', [[\pi]]),
+  create_snippet('-pi', [[\pi]]),
   create_snippet('geq', [[\geq]]),
   create_snippet('leq', [[\leq]]),
   create_snippet('neq', [[\neq]]),
-  create_snippet('times', [[\times]]),
+  create_snippet('-times', [[\times]]),
   create_snippet('dottimes', [[\cdot]]),
   create_snippet('epsilon', [[\epsilon]]),
   create_snippet('lambda', [[\lambda]]),
@@ -58,14 +58,14 @@ return {
   create_snippet('mm', [[$<>$]], { i(1) }),
   create_snippet('-text', [[text]]),
   create_snippet('text', [[\text{ <> }]], { i(1) }),
-  create_snippet('-set', [[set]]),
-  create_snippet('set', [[\{<>\}]], { i(1) }),
-  create_snippet('fraction', [[\frac{<>}{<>}]], { i(1), i(2) }),
+  create_snippet('-set', [[\{<>\}]], { i(1) }),
+  create_snippet('-frac', [[\frac{<>}{<>}]], { i(1), i(2) }),
   create_snippet('overline', [[\overline{<>}]], { i(1) }),
   create_snippet('powerset', [[\mathcal{P}(<>)]], { i(1) }),
   create_snippet('bar', [[|<>|]], { i(1) }),
   create_snippet('mono', [[\texttt{<>}]], { i(1) }),
   create_snippet('italic', [[\textit{<>}]], { i(1) }),
+  create_snippet('x->', [[\xrightarrow{<>}]], { i(1) }),
   create_snippet('->', [[\rightarrow]]),
   create_snippet('lambda', [[\lambda]]),
   create_snippet('delta', [[\delta]]),
@@ -75,13 +75,45 @@ return {
   create_snippet('implies', [[\implies]]),
   create_snippet('biimplication', [[\iff]]),
   create_snippet('forall', [[\forall]]),
-  create_snippet('exists', [[\exists]]),
-  create_snippet('bar', [[|<>|]], { i(1) }),
+  create_snippet('thereexists', [[\exists]]),
+  create_snippet('-bar', [[|<>|]], { i(1) }),
   create_snippet('paren', [[(<>)]], { i(1) }),
   create_snippet('sqrt', [[\sqrt{<>}]], { i(1) }),
-  create_snippet('-vec', [[vec]]),
-  create_snippet('vec', [[\mathbf{<>}]], { i(1) }),
+  create_snippet('-vec', [[\mathbf{<>}]], { i(1) }),
+  create_snippet('zerovec', [[\mathbf{0}]]),
   create_snippet('cvec', [[\langle <>, <> \rangle]], { i(1), i(2) }),
+  create_snippet('tcblue', [[\textcolor{blue}{<>}]], { i(1) }),
+  create_snippet('ihat', [[\mathbf{\hat{i}}]]),
+  create_snippet('jhat', [[\mathbf{\hat{j}}]]),
+  create_snippet('khat', [[\mathbf{\hat{k}}]]),
+  create_snippet('tcred', [[\textcolor{red}{<>}]], { i(1) }),
   create_snippet('img', [[![<>](<>){width=<> height=<>}]], { i(1, 'alt-text'), i(2, 'link'), i(3), i(4) }),
+  create_snippet('-subsection', [[\subsection{<>}]], { i(1) }),
   s({ trig = 'textit', snippetType = 'autosnippet' }, fmta([[\textit{<text>}<end>]], { text = i(1), ['end'] = i(2) })),
+  s(
+    { trig = 'list', snippetType = 'autosnippet' },
+    fmta(
+      [[
+\begin{itemize}
+  \item <>
+  \item <>
+  \item <>
+\end{itemize}
+]],
+      { i(1), i(2), i(3) }
+    )
+  ),
+  s(
+    { trig = 'numlist', snippetType = 'autosnippet' },
+    fmta(
+      [[
+\begin{enumerate}
+  \item <>
+  \item <>
+  \item <>
+\end{enumerate}
+]],
+      { i(1), i(2), i(3) }
+    )
+  ),
 }
