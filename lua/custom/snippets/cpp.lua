@@ -51,4 +51,53 @@ int main() {
       { i(0) }
     )
   ),
+  s(
+    { trig = '()', snippetType = 'autosnippet' },
+    fmt(
+      [[
+({}){}
+  ]],
+      { i(1), i(2) }
+    )
+  ),
+  s(
+    { trig = '()', snippetType = 'autosnippet' },
+    fmta(
+      [[
+{<>}<>
+  ]],
+      { i(1), i(2) }
+    )
+  ),
+  s(
+    { trig = 'comment-block-beginning' },
+    fmta(
+      [[
+//================================================= 
+// Joel Singh
+// <>
+// <> 
+// <>
+// 
+//================================================= 
+  ]],
+      { i(1, 'Month Year'), i(2, 'filename.ext'), i(3, 'Description') }
+    )
+  ),
+  s(
+    { trig = 'comment-block-function' },
+    fmta(
+      [[
+//================================================= 
+// <>
+// <>
+// Parameters:
+//  <> 
+// Return Value:
+//  <>
+//================================================= 
+  ]],
+      { i(1, 'functionName'), i(2, 'Description'), i(3, 'parameters'), i(4, 'Return Value') }
+    )
+  ),
 }
