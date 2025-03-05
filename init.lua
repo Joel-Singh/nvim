@@ -496,6 +496,18 @@ require('lazy').setup({
           --  the definition of its *type*, not where it was *defined*.
           map('grt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype Definition')
 
+          local function add_to_global_dict()
+            vim.lsp.buf.code_action({
+                filter = function (codeAction)
+                  return string.find(codeAction.title, "global") ~= nil
+                end,
+                apply = true
+            })
+          end
+          if vim.bo.filetype == 'markdown' then
+            map('<leader>cg', add_to_global_dict, '[C]ode Add To [G]lobal Dict', { 'n', 'x' })
+          end
+
           -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
           ---@param client vim.lsp.Client
           ---@param method vim.lsp.protocol.Method
