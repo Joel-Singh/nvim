@@ -497,12 +497,12 @@ require('lazy').setup({
           map('grt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype Definition')
 
           local function add_to_global_dict()
-            vim.lsp.buf.code_action({
-                filter = function (codeAction)
-                  return string.find(codeAction.title, "global") ~= nil
-                end,
-                apply = true
-            })
+            vim.lsp.buf.code_action {
+              filter = function(codeAction)
+                return string.find(codeAction.title, 'global') ~= nil
+              end,
+              apply = true,
+            }
           end
           if vim.bo.filetype == 'markdown' then
             map('<leader>cg', add_to_global_dict, '[C]ode Add To [G]lobal Dict', { 'n', 'x' })
