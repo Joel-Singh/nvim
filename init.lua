@@ -620,7 +620,6 @@ require('lazy').setup({
         -- ts_ls = {},
         --
 
-        harper_ls = { filetypes = { 'markdown', 'tex' } },
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
