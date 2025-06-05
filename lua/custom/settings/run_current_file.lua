@@ -11,7 +11,7 @@ local function run_current_file()
   end
 
   if vim.bo.filetype == 'rust' then
-    vim.cmd 'tabnew | term cargo run'
+    vim.cmd 'tabnew | term cargo run --features bevy/dynamic_linking'
     vim.cmd 'startinsert'
   end
 
