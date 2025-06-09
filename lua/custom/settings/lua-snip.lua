@@ -24,7 +24,6 @@ local postfix = require('luasnip.extras.postfix').postfix
 local types = require 'luasnip.util.types'
 local parse = require('luasnip.util.parser').parse_snippet
 local ms = ls.multi_snippet
-local k = require('luasnip.nodes.key_indexer').new_key
 
 require('luasnip.loaders.from_lua').load { paths = { '~/nvim/lua/custom/snippets' } }
 ls.filetype_extend("markdown", { "tex" })
