@@ -26,14 +26,14 @@ local parse = require('luasnip.util.parser').parse_snippet
 local ms = ls.multi_snippet
 
 return {
-  s({ trig = '()', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta([[(<>)]], { i(1) })),
-  s({ trig = '""', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta([["<>"]], { i(1) })),
-  s({ trig = "''", snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta([['<>']], { i(1) })),
-  s({ trig = '{}', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta([[{<>}]], { i(1) })),
-  s({ trig = '[]', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta('[<>]', { i(1) })),
-  s({ trig = '||', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta('|<>|', { i(1) })),
-  s({ trig = '<>', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmt('<{}>', { i(1) })),
-  s({ trig = '$$', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta('$<>$', { i(1) })),
-  s({ trig = '**', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta('*<>*', { i(1) })),
-  s({ trig = '``', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta('`<>`', { i(1) })),
+	s({ trig = '()', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta([[(<>)]], { i(1) })),
+	s({ trig = '""', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta([["<>"]], { i(1) })),
+	s({ trig = "''", snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta([['<>']], { i(1) })),
+	s({ trig = '{}', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta([[{<>}]], { i(1) })),
+	s({ trig = '[]', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta('[<>]', { i(1) })),
+	s({ trig = '||', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta('|<>|', { i(1) })),
+	s({ trig = '<>', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmt('<{}>', { i(1) })),
+	s({ trig = '$$', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta('$<>$', { i(1) })),
+	s({ trig = '**', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta('*<>*', { i(1) })),
+	s({ trig = '``', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta('`<>`', { i(1) })),
 }
