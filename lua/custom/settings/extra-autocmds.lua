@@ -38,7 +38,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 
 vim.api.nvim_create_autocmd({ 'BufWritePost' }, { pattern = { '*.md' }, command = 'silent !pandoc % -o ~/Personal/Temporary/current_md_file_in_nvim.pdf &' })
 
-vim.api.nvim_create_autocmd({ 'VimLeavePre' }, { command = 'mksession! ~/nvim/Session.vim' })
+vim.api.nvim_create_autocmd({ 'VimLeavePre' }, { command = 'mksession! ~/.cache/nvim/session.vim' })
 
 -- Restore cursor to file position in previous editing session
 vim.api.nvim_create_autocmd('BufReadPost', {
