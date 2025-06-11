@@ -569,6 +569,9 @@ require('lazy').setup({
           }
         }
       })
+
+      vim.lsp.enable('rust_analyzer')
+
       vim.lsp.config('*', { capabilities = require('blink.cmp').get_lsp_capabilities() })
     end,
   },
