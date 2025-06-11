@@ -1,4 +1,5 @@
 vim.keymap.set('n', '<Leader>W', '<CMD>w<CR>', { desc = 'Write file' })
+vim.keymap.set('n', '<Leader>E', '<CMD>e<CR>', { desc = 'Edit file' })
 
 vim.keymap.set('n', '<Leader>cc', '<CMD>CodeCompanionChat<CR>', { desc = '[C]ode [C]hat' })
 
