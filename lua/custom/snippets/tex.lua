@@ -26,13 +26,13 @@ local parse = require('luasnip.util.parser').parse_snippet
 local ms = ls.multi_snippet
 
 local function create_snippet(trig, char, nodes)
-  nodes = nodes or {}
-  return s({ trig = trig, snippetType = 'autosnippet', wordTrig=false }, fmta(char, nodes))
+	nodes = nodes or {}
+	return s({ trig = trig, snippetType = 'autosnippet', wordTrig = false }, fmta(char, nodes))
 end
 
 local function create_snippet_not_auto(trig, char, nodes)
-  nodes = nodes or {}
-  return s({ trig = trig }, fmta(char, nodes))
+	nodes = nodes or {}
+	return s({ trig = trig }, fmta(char, nodes))
 end
 
 return {
