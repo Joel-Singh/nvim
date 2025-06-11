@@ -36,4 +36,10 @@ return {
 	s({ trig = '$$', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta('$<>$', { i(1) })),
 	s({ trig = '**', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta('*<>*', { i(1) })),
 	s({ trig = '``', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta('`<>`', { i(1) })),
+	s({ trig = 'jk', snippetType = 'autosnippet', wordTrig = false }, fmta([[\]], {})),
+	s({ trig = 'kj', snippetType = 'autosnippet', wordTrig = false }, fmta([[\]], {})),
+	s({ trig = 'jl', snippetType = 'autosnippet', wordTrig = false }, fmta([[&]], {})),
+	s({ trig = 'lj', snippetType = 'autosnippet', wordTrig = false }, fmta([[&]], {})),
+	s({ trig = 'df', snippetType = 'autosnippet', wordTrig = false }, fmta([[*]], {})),
+	s({ trig = 'fd', snippetType = 'autosnippet', wordTrig = false }, fmta([[*]], {})),
 }
