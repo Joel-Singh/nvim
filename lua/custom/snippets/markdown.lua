@@ -26,6 +26,7 @@ local parse = require('luasnip.util.parser').parse_snippet
 local ms = ls.multi_snippet
 
 return {
-  s({ trig = 'DONE' }, fmta([[✅]], {})),
-  s({ trig = 'NOTDONE' }, fmta([[❌]], {})),
+  s({ trig = 'done' }, fmta([[✅]], {})),
+  s({ trig = 'not-done' }, fmta([[❌]], {})),
+  s({ trig = 'code-block' }, fmta('```<>\n<>\n<>```', { i(1), i(2), i(3) })),
 }
