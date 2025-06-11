@@ -100,8 +100,7 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- or just use <C-\><C-n> to exit terminal mode
 -- vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 vim.keymap.set('t', '<C-\\', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
-vim.keymap.set('n', '<Leader>T', '<cmd>tabnew<CR><cmd>terminal<CR>ilazygit && e<CR>',
-  { desc = 'Enter Lazygit With Terminal' })
+vim.keymap.set('n', '<Leader>T', '<cmd>tabnew<CR><cmd>terminal<CR>ilazygit && e<CR>', { desc = 'Enter Lazygit With Terminal' })
 
 -- TIP: Disable arrow keys in normal mode
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
@@ -218,7 +217,7 @@ require('lazy').setup({
   -- Then, because we use the `opts` key (recommended), the configuration runs
   -- after the plugin has been loaded as `require(MODULE).setup(opts)`.
 
-  {                     -- Useful plugin to show you pending keybinds.
+  { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     opts = {
@@ -299,7 +298,7 @@ require('lazy').setup({
       { 'nvim-telescope/telescope-ui-select.nvim' },
 
       -- Useful for getting pretty icons, but requires a Nerd Font.
-      { 'nvim-tree/nvim-web-devicons',            enabled = vim.g.have_nerd_font },
+      { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
     },
     config = function()
       -- Telescope is a fuzzy finder that comes with a lot of different things that
@@ -556,7 +555,7 @@ require('lazy').setup({
         },
       }
 
-      vim.lsp.enable('lua-language-server')
+      vim.lsp.enable 'lua-language-server'
       vim.lsp.config('lua-language-server', {
         cmd = { 'lua-language-server' },
         filetypes = { 'lua' },
@@ -564,13 +563,13 @@ require('lazy').setup({
         settings = {
           Lua = {
             diagnostics = {
-              globals = { 'vim' }
-            }
-          }
-        }
+              globals = { 'vim' },
+            },
+          },
+        },
       })
 
-      vim.lsp.enable('rust_analyzer')
+      vim.lsp.enable 'rust_analyzer'
 
       vim.lsp.config('*', { capabilities = require('blink.cmp').get_lsp_capabilities() })
     end,
