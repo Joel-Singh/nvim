@@ -569,6 +569,15 @@ require('lazy').setup({
         },
       })
 
+      vim.lsp.config('rust_analyzer', {
+        settings = {
+          ['rust-analyzer'] = {
+            cargo = {
+              targetDir = true,
+            },
+          },
+        },
+      })
       vim.lsp.enable 'rust_analyzer'
 
       vim.lsp.config('*', { capabilities = require('blink.cmp').get_lsp_capabilities() })
