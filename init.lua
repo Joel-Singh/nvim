@@ -570,6 +570,7 @@ require('lazy').setup({
       })
 
       vim.lsp.config('rust_analyzer', {
+        cmd = { 'nix-shell', '/home/apple/repos/nixos/devshells/rust/shell.nix', '--run', 'rust-analyzer' },
         settings = {
           ['rust-analyzer'] = {
             cargo = {
