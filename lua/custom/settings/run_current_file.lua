@@ -15,6 +15,11 @@ local function run_current_file()
     vim.cmd 'startinsert'
   end
 
+  if vim.bo.filetype == 'cpp' then
+    vim.cmd 'tabnew | term bash -c "cmake --build build && ./build/bin/main"'
+    vim.cmd 'startinsert'
+  end
+
   if vim.bo.filetype == 'markdown' then
     vim.cmd 'silent !zathura ~/Personal/Temporary/current_md_file_in_nvim.pdf &'
   end
