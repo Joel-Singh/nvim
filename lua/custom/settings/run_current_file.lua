@@ -11,7 +11,7 @@ local function run_current_file()
   end
 
   if vim.bo.filetype == 'rust' then
-    vim.cmd 'tabnew | term cargo fix --allow-dirty && cargo run'
+    vim.cmd '15split | term cargo fix --allow-dirty && cargo run'
     vim.cmd 'startinsert'
   end
 
