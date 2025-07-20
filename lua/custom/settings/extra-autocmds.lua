@@ -25,15 +25,17 @@ vim.api.nvim_create_autocmd('InsertLeave', {
 --   end,
 -- })
 
--- Remove double spaces
-vim.api.nvim_create_autocmd('BufWritePre', {
-  pattern = '*.md',
-  callback = function()
-    local save_cursor = vim.fn.getpos '.'
-    vim.cmd [[silent! %s/\(\S\)  \(\S\)/\1 \2/g]]
-    vim.fn.setpos('.', save_cursor)
-  end,
-})
+local remove_double_spaces = false
+if remove_double_spaces then
+  vim.api.nvim_create_autocmd('BufWritePre', {
+    pattern = '*.md',
+    callback = function()
+      local save_cursor = vim.fn.getpos '.'
+      vim.cmd [[silent! %s/\(\S\)  \(\S\)/\1 \2/g]]
+      vim.fn.setpos('.', save_cursor)
+    end,
+  })
+end
 
 vim.api.nvim_create_autocmd({ 'BufWritePost' }, { pattern = { '*.md' }, command = 'silent !pandoc % -o ~/Personal/Temporary/current_md_file_in_nvim.pdf &' })
 
