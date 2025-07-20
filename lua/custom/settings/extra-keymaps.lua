@@ -9,3 +9,6 @@ vim.keymap.set('n', '<A-h>', '<CMD>tabprevious<CR>', { desc = 'Tab Previous' })
 vim.keymap.set('n', '<A-c>', '<CMD>tabclose<CR>', { desc = 'Tab Close' })
 
 vim.keymap.set('i', '<C-i>', '<BS>')
+
+vim.keymap.set('i', '{}<CR>', '{<CR>}<Esc>O', { desc = 'Open Braces' })
+vim.keymap.set('i', '()<CR>', '(<CR>)<Esc>O', { desc = 'Open Parentheses' })
