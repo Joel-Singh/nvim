@@ -16,7 +16,7 @@ local function run_current_file()
   end
 
   if vim.bo.filetype == 'cpp' then
-    vim.cmd 'tabnew | term bash -c "cmake --build build && ./build/bin/main"'
+    vim.cmd '15split | term bash -c "cmake --build build && ./build/bin/main"'
     vim.cmd 'startinsert'
   end
 
