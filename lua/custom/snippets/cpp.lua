@@ -99,4 +99,9 @@ int main() {
       { i(1, 'functionName'), i(2, 'Description'), i(3, 'parameters'), i(4, 'Return Value') }
     )
   ),
+  s({ trig = 'std', snippetType = 'autosnippet' }, fmta([[std::]], {})),
+  s({ trig = 'cout', snippetType = 'autosnippet' }, fmta([[std::cout]], {})),
+  s({ trig = 'endl', snippetType = 'autosnippet' }, fmta([[std::endl]], {})),
+  s({ trig = 'dbg!', snippetType = 'autosnippet' }, fmt([[std::cout << "{}: " << {} << std::endl; ]], { i(1), rep(1) })),
+  s({ trig = 'log!', snippetType = 'autosnippet' }, fmt([[std::cout << "{}" << std::endl; ]], { i(1) })),
 }
