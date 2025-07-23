@@ -34,7 +34,8 @@ return {
       <h3>From: {}</h3>
       <img src="./assets/personal-card-images/{}" style="width: 20em;" />
       <p>
-      {}</p>
+      {}
+      </p>
     </section>
     ]],
       { i(1), i(2), i(3) }
