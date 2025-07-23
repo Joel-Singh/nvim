@@ -23,6 +23,10 @@ local function run_current_file()
   if vim.bo.filetype == 'markdown' then
     vim.cmd 'silent !zathura ~/Personal/Temporary/current_md_file_in_nvim.pdf &'
   end
+
+  if vim.bo.filetype == 'html' then
+    vim.cmd 'silent !qutebrowser %'
+  end
 end
 
 vim.keymap.set('n', '<Leader>cr', run_current_file, { desc = '[C]ode [R]un' })
