@@ -832,7 +832,6 @@ require('lazy').setup({
 
 require 'custom.settings.run_current_file'
 require 'custom.settings.extra-keymaps'
-require 'custom.settings.telekasten-keymaps'
 require 'custom.settings.extra-options'
 require 'custom.settings.extra-autocmds'
 require 'custom.settings.lua-snip'
