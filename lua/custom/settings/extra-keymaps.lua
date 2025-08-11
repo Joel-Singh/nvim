@@ -11,4 +11,4 @@ vim.keymap.set('n', '<A-k>', 'ddkP', { desc = 'Move line up' })
 
 vim.keymap.set('n', '<C-s>', '12<C-w><C-s><Esc>', { desc = 'Create horizontal split' })
 
-vim.keymap.set('n', '<Leader>d', '<CMD>r !cal -3v<CR>o<esc><CMD>r !date <CR>', { desc = 'Create horizontal split' })
+vim.keymap.set('n', '<Leader>d', '<CMD>r !cal -3v<CR>o<esc><CMD>r !date <CR>', { desc = 'Show [D]ate and calendar' })
