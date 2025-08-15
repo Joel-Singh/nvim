@@ -7,12 +7,12 @@ vim.api.nvim_create_autocmd(
 
 vim.api.nvim_create_autocmd('InsertLeave', {
   pattern = '*.md',
-  command = 'write | doautocmd BufWritePre | doautocmd BufWritePost',
+  command = 'update | doautocmd BufWritePre | doautocmd BufWritePost',
 })
 
 vim.api.nvim_create_autocmd('InsertLeave', {
   pattern = '*.tex',
-  command = 'write | doautocmd BufWritePre | doautocmd BufWritePost',
+  command = 'update | doautocmd BufWritePre | doautocmd BufWritePost',
 })
 
 -- Add two spaces to the end of every line
