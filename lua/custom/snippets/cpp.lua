@@ -51,24 +51,6 @@ int main() {
     )
   ),
   s(
-    { trig = '()', snippetType = 'autosnippet' },
-    fmt(
-      [[
-({}){}
-  ]],
-      { i(1), i(2) }
-    )
-  ),
-  s(
-    { trig = '()', snippetType = 'autosnippet' },
-    fmta(
-      [[
-{<>}<>
-  ]],
-      { i(1), i(2) }
-    )
-  ),
-  s(
     { trig = 'comment-block-beginning' },
     fmta(
       [[
@@ -101,4 +83,5 @@ int main() {
   ),
   s({ trig = 'dbg!', snippetType = 'autosnippet' }, fmt([[std::cout << "{}: " << ({}) << std::endl; ]], { i(1), rep(1) })),
   s({ trig = 'log!', snippetType = 'autosnippet' }, fmt([[std::cout << "{}" << std::endl; ]], { i(1) })),
+  s({ trig = 'ttT', snippetType = 'autosnippet' }, fmt([[template <typename T> ]], {})),
 }
