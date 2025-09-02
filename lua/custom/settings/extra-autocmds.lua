@@ -11,6 +11,11 @@ vim.api.nvim_create_autocmd('InsertLeave', {
 })
 
 vim.api.nvim_create_autocmd('InsertLeave', {
+  pattern = '*.typ',
+  command = 'update | doautocmd BufWritePre | doautocmd BufWritePost',
+})
+
+vim.api.nvim_create_autocmd('InsertLeave', {
   pattern = '*.tex',
   command = 'update | doautocmd BufWritePre | doautocmd BufWritePost',
 })
@@ -38,6 +43,8 @@ if remove_double_spaces then
 end
 
 vim.api.nvim_create_autocmd({ 'BufWritePost' }, { pattern = { '*.md' }, command = 'silent !pandoc % -o ~/Personal/Temporary/current_md_file_in_nvim.pdf &' })
+
+-- vim.api.nvim_create_autocmd({ 'BufWritePost' }, { pattern = { '*.typ' }, command = 'silent !typst compile % /tmp/current-typ-file.pdf &' })
 
 vim.api.nvim_create_autocmd({ 'VimLeavePre' }, { command = 'mksession! ~/.cache/nvim/session.vim' })
 
