@@ -24,6 +24,10 @@ local function run_current_file()
     vim.cmd 'silent !zathura ~/Personal/Temporary/current_md_file_in_nvim.pdf &'
   end
 
+  if vim.bo.filetype == 'typst' then
+    vim.cmd 'silent !zathura /tmp/current-typ-file.pdf &'
+  end
+
   if vim.bo.filetype == 'html' then
     vim.cmd 'silent !qutebrowser %'
   end
