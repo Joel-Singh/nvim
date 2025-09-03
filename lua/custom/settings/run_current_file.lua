@@ -21,7 +21,7 @@ local function run_current_file()
   end
 
   if vim.bo.filetype == 'markdown' then
-    vim.cmd 'silent !zathura ~/Personal/Temporary/current_md_file_in_nvim.pdf &'
+    vim.cmd 'silent !zathura /tmp/current_md_file_in_nvim.pdf &'
   end
 
   if vim.bo.filetype == 'typst' then

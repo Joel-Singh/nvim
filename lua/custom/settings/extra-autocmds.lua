@@ -42,7 +42,7 @@ if remove_double_spaces then
   })
 end
 
-vim.api.nvim_create_autocmd({ 'BufWritePost' }, { pattern = { '*.md' }, command = 'silent !pandoc % -o ~/Personal/Temporary/current_md_file_in_nvim.pdf &' })
+vim.api.nvim_create_autocmd({ 'BufWritePost' }, { pattern = { '*.md' }, command = 'silent !pandoc % -o /tmp/current_md_file_in_nvim.pdf &' })
 
 -- vim.api.nvim_create_autocmd({ 'BufWritePost' }, { pattern = { '*.typ' }, command = 'silent !typst compile % /tmp/current-typ-file.pdf &' })
 
