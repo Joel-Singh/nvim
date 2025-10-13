@@ -37,9 +37,6 @@ end
 
 return {
   create_snippet_not_auto('emptyset', [[\emptyset]]),
-  create_snippet('geq', [[\geq]]),
-  create_snippet('leq', [[\leq]]),
-  create_snippet('cdot', [[\cdot]]),
   create_snippet_not_auto('subset', [[\subseteq]]),
   create_snippet('superset', [[\supseteq]]),
   create_snippet('tdd', [[\text{ def} \\]]),

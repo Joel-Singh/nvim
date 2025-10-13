@@ -25,5 +25,6 @@ local types = require 'luasnip.util.types'
 local parse = require('luasnip.util.parser').parse_snippet
 local ms = ls.multi_snippet
 
-require('luasnip.loaders.from_lua').load { paths = { '~/.config/nvim/lua/custom/snippets' } }
-ls.filetype_extend('markdown', { 'tex' })
+return {
+  s({ trig = 'mm', snippetType = 'autosnippet', wordTrig = true }, fmta([[$<>$]], { i(1) })),
+}
