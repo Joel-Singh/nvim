@@ -2,7 +2,7 @@
 
 vim.api.nvim_create_autocmd(
   { 'BufWritePost' },
-  { pattern = { '*.tex' }, command = 'silent !pdflatex -output-directory=%:h' .. '/output' .. ' % > /dev/null &' }
+  { pattern = { '*.tex' }, command = 'silent !mkdir -p %:h/output && pdflatex -output-directory=%:h' .. '/output' .. ' % > /dev/null &' }
 )
 
 vim.api.nvim_create_autocmd('InsertLeave', {
