@@ -14,7 +14,7 @@ vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", { desc = 'Move selected lines u
 
 vim.keymap.set('n', '<C-s>', '12<C-w><C-s><Esc>', { desc = 'Create horizontal split' })
 
-vim.keymap.set('n', '<Leader>d', '<CMD>r !cal -3v<CR>o<esc><CMD>r !date <CR>', { desc = 'Show [D]ate and calendar' })
+vim.keymap.set('n', '<Leader>d', '<CMD>r !cal -3<CR>', { desc = 'Show [D]ate and calendar' })
 
 vim.keymap.set('n', '<C-n>', '<CMD>cnext<CR>', { desc = 'Quickfix Next' })
 vim.keymap.set('n', '<C-p>', '<CMD>cprev<CR>', { desc = 'Quickfix Previous' })
