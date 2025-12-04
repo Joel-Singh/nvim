@@ -579,6 +579,16 @@ require('lazy').setup({
         },
       })
 
+      vim.lsp.config('tinymist', {
+        cmd = { 'tinymist' },
+        filetypes = { 'typst' },
+        settings = {
+          exportPdf = 'onType',
+          outputPath = '/tmp/current-typ-file',
+          -- formatterMode = 'typstyle',
+        },
+      })
+
       -- vim.lsp.enable 'rust_analyzer'
       vim.lsp.enable 'ccls'
       vim.lsp.enable 'tinymist'
