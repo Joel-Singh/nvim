@@ -25,7 +25,8 @@ local function run_current_file()
   end
 
   if vim.bo.filetype == 'typst' then
-    vim.cmd 'silent !zathura /tmp/current-typ-file.pdf &'
+    vim.cmd 'silent !typst compile % /tmp/current-typ-file.pdf --root $(git rev-parse --show-toplevel)'
+    vim.cmd 'silent !zathura /tmp/%:t:r.pdf &'
   end
 
   if vim.bo.filetype == 'html' then

@@ -27,6 +27,7 @@ local ms = ls.multi_snippet
 
 return {
   s({ trig = '()', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta([[(<>)]], { i(1) })),
+  s({ trig = '__', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta([[_<>_]], { i(1) })),
   s({ trig = '""', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta([["<>"]], { i(1) })),
   s({ trig = "''", snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta([['<>']], { i(1) })),
   s({ trig = '{}', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta([[{<>}]], { i(1) })),
@@ -43,5 +44,18 @@ return {
   s({ trig = 'lj', snippetType = 'autosnippet', wordTrig = false }, fmta([[&]], {})),
   s({ trig = 'df', snippetType = 'autosnippet', wordTrig = false }, fmta([[*]], {})),
   s({ trig = 'fd', snippetType = 'autosnippet', wordTrig = false }, fmta([[*]], {})),
-  s({ trig = '---', snippetType = 'autosnippet', wordTrig = false }, fmta([[------------------------------]], {})),
+  s({ trig = '----', snippetType = 'autosnippet', wordTrig = false }, fmta([[------------------------------]], {})),
+  s(
+    { trig = 'aside', wordTrig = false },
+    fmta(
+      [[
+------------------------------
+
+<>
+
+------------------------------
+  ]],
+      { i(1) }
+    )
+  ),
 }

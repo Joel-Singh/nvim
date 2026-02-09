@@ -27,4 +27,25 @@ local ms = ls.multi_snippet
 
 return {
   s({ trig = 'mm', snippetType = 'autosnippet', wordTrig = true }, fmta([[$<>$]], { i(1) })),
+  s({ trig = 'vvv', snippetType = 'autosnippet', wordTrig = true }, fmta([[chevron.l <> chevron.r]], { i(1) })),
+  s(
+    { trig = 'rrr', snippetType = 'autosnippet', wordTrig = true },
+    fmta(
+      [=[#rect[
+  <>
+]]=],
+      { i(1) }
+    )
+  ),
+  s(
+    { trig = 'general-template' },
+    fmta(
+      [[
+#import "/templates/general-template.typ": general
+
+#show: general.with(<>)
+  ]],
+      { i(1) }
+    )
+  ),
 }

@@ -584,8 +584,8 @@ require('lazy').setup({
         filetypes = { 'typst' },
         settings = {
           exportPdf = 'onType',
-          outputPath = '/tmp/current-typ-file',
-          -- formatterMode = 'typstyle',
+          outputPath = '/tmp/$name',
+          formatterMode = 'typstyle',
         },
       })
 
@@ -770,7 +770,7 @@ require('lazy').setup({
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
-    main = 'nvim-treesitter.configs', -- Sets main module to use for opts
+    -- main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
       ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc', 'latex' },
@@ -845,6 +845,7 @@ require 'custom.settings.run_current_file'
 require 'custom.settings.extra-keymaps'
 require 'custom.settings.extra-options'
 require 'custom.settings.extra-autocmds'
+require 'custom.settings.inkscape-commands'
 require 'custom.settings.lua-snip'
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
