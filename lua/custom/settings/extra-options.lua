@@ -1,4 +1,6 @@
 -- vim.opt.autochdir = true
-require('duck').hatch '🐢'
+require('duck').hatch '🐈'
 vim.opt.linebreak = true
-vim.opt.tw = 58
+vim.opt.tw = 64
+
+vim.opt.swapfile = false

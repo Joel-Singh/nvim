@@ -34,4 +34,13 @@ local function run_current_file()
   end
 end
 
+local function run_current_file_alternate()
+  vim.cmd 'wa'
+
+  if vim.bo.filetype == 'typst' then
+    vim.cmd 'TypstPreview'
+  end
+end
+
 vim.keymap.set('n', '<Leader>cr', run_current_file, { desc = '[C]ode [R]un' })
+vim.keymap.set('n', '<Leader>cR', run_current_file_alternate, { desc = '[C]ode [R]un Alternate' })

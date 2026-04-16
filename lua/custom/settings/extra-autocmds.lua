@@ -10,15 +10,21 @@ vim.api.nvim_create_autocmd('InsertLeave', {
   command = 'update | doautocmd BufWritePre | doautocmd BufWritePost',
 })
 
-vim.api.nvim_create_autocmd('InsertLeave', {
-  pattern = '*.typ',
-  command = 'update | doautocmd BufWritePre | doautocmd BufWritePost',
+vim.api.nvim_create_autocmd('FocusLost', {
+  pattern = '*',
+  command = 'silent! update',
 })
 
-vim.api.nvim_create_autocmd('InsertLeave', {
-  pattern = '*.tex',
-  command = 'update | doautocmd BufWritePre | doautocmd BufWritePost',
+vim.api.nvim_create_autocmd('FocusGained', {
+  pattern = '*',
+  command = 'silent! sleep 50m | checktime',
 })
+
+-- vim.api.nvim_create_autocmd('SwapExists', {
+--   callback = function()
+--     vim.v.swapchoice = 'e' -- 'e' for Edit anyway, 'o' for Read-only
+--   end,
+-- })
 
 -- Add two spaces to the end of every line
 -- vim.api.nvim_create_autocmd('BufWritePre', {

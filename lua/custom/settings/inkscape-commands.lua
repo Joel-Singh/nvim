@@ -1,9 +1,8 @@
 local function open_inkscape_diagram()
   local file = vim.fn.expand '<cfile>'
-
   local buffer_dir = vim.fn.expand '%:h'
-
   local diagram_file = buffer_dir .. '/' .. file
+  local diagram_file_absolute_path = vim.fn.fnamemodify(diagram_file, ':p')
 
   if vim.fn.filereadable(diagram_file) ~= 0 then
     vim.fn.system('inkscape' .. ' ' .. diagram_file .. ' &')
@@ -13,7 +12,7 @@ local function open_inkscape_diagram()
 
     vim.fn.system('cp /home/apple/repos/nixos/config/xdg-config/nvim/assets/empty-svg-template.svg' .. ' ' .. diagram_file)
 
-    vim.fn.system('ln --symbolic' .. ' ' .. diagram_file .. ' ' .. '/home/apple/repos/inkscape-templates/' .. file)
+    vim.fn.system('ln --symbolic' .. ' ' .. diagram_file_absolute_path .. ' ' .. '/home/apple/repos/inkscape-templates/' .. file)
     vim.fn.system('inkscape' .. ' ' .. diagram_file .. ' &')
   end
 end

@@ -42,8 +42,6 @@ return {
   s({ trig = 'kj', snippetType = 'autosnippet', wordTrig = false }, fmta([[\]], {})),
   s({ trig = 'jl', snippetType = 'autosnippet', wordTrig = false }, fmta([[&]], {})),
   s({ trig = 'lj', snippetType = 'autosnippet', wordTrig = false }, fmta([[&]], {})),
-  s({ trig = 'df', snippetType = 'autosnippet', wordTrig = false }, fmta([[*]], {})),
-  s({ trig = 'fd', snippetType = 'autosnippet', wordTrig = false }, fmta([[*]], {})),
   s({ trig = '----', snippetType = 'autosnippet', wordTrig = false }, fmta([[------------------------------]], {})),
   s(
     { trig = 'aside', wordTrig = false },

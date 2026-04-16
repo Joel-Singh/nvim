@@ -353,7 +353,7 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sd', builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>sc', builtin.command_history, { desc = '[S]earch [C]ommand History' })
-      vim.keymap.set('n', '<leader>st', builtin.treesitter, { desc = '[S]earch [C]ommand History' })
+      vim.keymap.set('n', '<leader>st', builtin.treesitter, { desc = '[S]earch [T]ree Sitter' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
@@ -586,12 +586,19 @@ require('lazy').setup({
           exportPdf = 'onType',
           outputPath = '/tmp/$name',
           formatterMode = 'typstyle',
+          formatterPrintWidth = 64,
+          formatterProseWrap = true,
+          projectResolution = 'lockDatabase',
+          lint = {
+            enabled = true,
+            when = 'onType',
+          },
         },
       })
+      vim.lsp.enable 'tinymist'
 
       -- vim.lsp.enable 'rust_analyzer'
       vim.lsp.enable 'ccls'
-      vim.lsp.enable 'tinymist'
 
       vim.lsp.config('*', { capabilities = require('blink.cmp').get_lsp_capabilities() })
     end,

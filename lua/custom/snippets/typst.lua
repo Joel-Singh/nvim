@@ -41,11 +41,15 @@ return {
     { trig = 'general-template' },
     fmta(
       [[
-#import "/templates/general-template.typ": general
+#import "/templates/general-template.typ": *
 
-#show: general.with(<>)
+#show: general.with(
+  title: "<>",
+  preamble: [<>],
+  class: "<>",
+)
   ]],
-      { i(1) }
+      { i(1), i(2), i(3) }
     )
   ),
 }
