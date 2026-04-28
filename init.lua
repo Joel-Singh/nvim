@@ -726,7 +726,7 @@ require('lazy').setup({
 require 'custom.settings.run_current_file'
 require 'custom.settings.keymaps'
 require 'custom.settings.options'
-require 'custom.settings.extra-autocmds'
+require 'custom.settings.autocmds'
 require 'custom.settings.inkscape-commands'
 require 'custom.settings.lua-snip'
 -- The line beneath this is called `modeline`. See `:help modeline`
