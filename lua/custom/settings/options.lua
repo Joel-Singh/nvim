@@ -5,8 +5,6 @@ vim.opt.tw = 64
 
 vim.opt.swapfile = false
 
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 
 vim.o.number = true

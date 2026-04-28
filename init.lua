@@ -42,6 +42,9 @@ vim.keymap.set('n', '<C-c>', '<C-w><C-c>', { desc = 'Close window' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
+-- Here and not keymaps because needs to be set before lazy
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
