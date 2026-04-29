@@ -29,22 +29,6 @@ vim.api.nvim_create_autocmd('FocusGained', {
   command = 'silent! sleep 50m | checktime',
 })
 
--- vim.api.nvim_create_autocmd('SwapExists', {
---   callback = function()
---     vim.v.swapchoice = 'e' -- 'e' for Edit anyway, 'o' for Read-only
---   end,
--- })
-
--- Add two spaces to the end of every line
--- vim.api.nvim_create_autocmd('BufWritePre', {
---   pattern = '*.md',
---   callback = function()
---     local save_cursor = vim.fn.getpos '.'
---     vim.cmd [[silent! %s/\([^\ ]\)$/\1  ]]
---     vim.fn.setpos('.', save_cursor)
---   end,
--- })
-
 local remove_double_spaces = false
 if remove_double_spaces then
   vim.api.nvim_create_autocmd('BufWritePre', {
