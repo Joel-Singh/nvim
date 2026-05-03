@@ -25,12 +25,21 @@ local function run_current_file()
   end
 
   if vim.bo.filetype == 'typst' then
-    vim.cmd 'silent !typst compile % /tmp/current-typ-file.pdf --root $(git rev-parse --show-toplevel)'
-    vim.cmd 'silent !zathura /tmp/%:t:r.pdf &'
+    local output_file = '/tmp/' .. vim.fn.expand '%:t:r' .. '.pdf'
+    local input_file = vim.fn.expand '%:p'
+    local typst_file_watch = vim.system { 'typst', 'watch', input_file, output_file }
+
+    vim.system({ 'zathura', output_file }, function()
+      typst_file_watch:kill 'sigterm'
+    end)
   end
 
   if vim.bo.filetype == 'html' then
     vim.cmd 'silent !qutebrowser %'
+  end
+
+  if vim.bo.filetype == 'cs' then
+    vim.cmd 'silent !dotnet run'
   end
 end
 

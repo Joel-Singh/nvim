@@ -53,4 +53,19 @@ return {
       { i(1), i(2), i(3) }
     )
   ),
+  s(
+    { trig = 'transaction' },
+    fmta(
+      [[
+Transaction(
+  "<>",
+  "<>",
+  "<>",
+  [<>],
+  ed("<> <> <>"),
+),
+  ]],
+      { i(1, 'kind'), i(2, 'cost'), i(3, 'name'), i(4, 'description'), i(5, 'MMM'), i(6, 'DD'), i(7, 'YYYY') }
+    )
+  ),
 }

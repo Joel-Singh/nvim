@@ -27,9 +27,42 @@ vim.keymap.set('v', '<A-k>', ":m '<-2<CR>gv=gv", { desc = 'Move selected lines u
 
 vim.keymap.set('n', '<C-s>', '12<C-w><C-s><Esc>', { desc = 'Create horizontal split' })
 
-vim.keymap.set('n', '<Leader>d', "i<C-r>=systemlist('date')[0]<CR><Esc>", { desc = 'Read Todays [D]ate' })
+vim.keymap.set('n', '<Leader>d', 'i<C-r>=system("date | tr -d \'\\n\'")<CR><Esc>', { desc = 'Read Todays [d]ate' })
+vim.keymap.set(
+  'n',
+  '<Leader>D',
+  "i<C-r>=system(\"date '+datetime\\(year: \\%Y, month: \\%m, day: \\%e\\)' | tr -d '\\n'\")<CR><Esc>",
+  { desc = 'Read Todays [D]ate as Typst' }
+)
 
 vim.keymap.set('n', '<C-n>', '<CMD>cnext<CR>', { desc = 'Quickfix Next' })
 vim.keymap.set('n', '<C-p>', '<CMD>cprev<CR>', { desc = 'Quickfix Previous' })
 
 vim.keymap.set('n', '<Leader>O', '<CMD>Oil<CR>', { desc = '[O]il' })
+
+-- This... was vibecoded. No idea how it works.
+local get_current_time_command = [[gdbus call --session --dest org.mpris.MediaPlayer2.vlc --object-path /org/mpris/MediaPlayer2 \
+   --method org.freedesktop.DBus.Properties.Get org.mpris.MediaPlayer2.Player Position \
+ | grep -oE '[0-9]+' | tail -n1 \
+  | awk '{us=$1; ms=int(us/1000); s=int(ms/1000); ms%=1000; m=int(s/60); s%=60; printf "%02d:%02d.%03d\n", m,s,ms}']]
+
+local function insert_current_time()
+  local output = vim.fn.systemlist(get_current_time_command)
+  if vim.v.shell_error ~= 0 then
+    vim.api.nvim_err_writeln('get_current_time failed: ' .. table.concat(output, '\n'))
+    return
+  end
+
+  local text = output[1] and vim.trim(output[1]) or ''
+  if text == '' then
+    vim.api.nvim_err_writeln 'get_current_time returned empty output'
+    return
+  end
+
+  vim.api.nvim_put({ text }, 'c', true, true)
+end
+
+vim.keymap.set('n', '<Leader>t', insert_current_time, { desc = 'Insert current time' })
+
+vim.keymap.set('x', '<Leader>cw', '<Plug>(coerce-visual)', { desc = 'Coerce visual' })
+vim.keymap.set('n', ',', '@@', { desc = 'Repeat Macro' })

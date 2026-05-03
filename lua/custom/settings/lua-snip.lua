@@ -26,4 +26,5 @@ local parse = require('luasnip.util.parser').parse_snippet
 local ms = ls.multi_snippet
 
 require('luasnip.loaders.from_lua').load { paths = { '~/repos/nixos/config/xdg-config/nvim/lua/custom/snippets' } }
+require('luasnip.loaders.from_vscode').lazy_load()
 ls.filetype_extend('markdown', { 'tex' })

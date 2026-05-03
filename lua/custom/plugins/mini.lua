@@ -21,15 +21,18 @@ return { -- Collection of various small independent plugins/modules
     --  and try some other statusline plugin
     local statusline = require 'mini.statusline'
     -- set use_icons to true if you have a Nerd Font
-    statusline.setup { use_icons = vim.g.have_nerd_font }
+    statusline.setup {
+      content = {
+        active = function()
+          local diagnostics = MiniStatusline.section_diagnostics { trunc_width = 5 }
 
-    -- You can configure sections in the statusline by overriding their
-    -- default behavior. For example, here we set the section for
-    -- cursor location to LINE:COLUMN
-    ---@diagnostic disable-next-line: duplicate-set-field
-    statusline.section_location = function()
-      return '%2l:%-2v'
-    end
+          return MiniStatusline.combine_groups {
+            { hl = 'MiniStatuslineDevinfo', strings = { diagnostics } },
+          }
+        end,
+      },
+      use_icons = vim.g.have_nerd_font,
+    }
 
     -- ... and there is more!
     --  Check out: https://github.com/echasnovski/mini.nvim

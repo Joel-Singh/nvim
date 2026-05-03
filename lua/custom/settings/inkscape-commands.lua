@@ -17,4 +17,7 @@ local function open_inkscape_diagram()
   end
 end
 
+-- I need to actually activate the script. I can activate the
+-- script, and then kill it on exit.
+
 vim.keymap.set('n', '<Leader>i', open_inkscape_diagram, { desc = 'Open Inkscape Diagram' })

@@ -26,6 +26,21 @@ local parse = require('luasnip.util.parser').parse_snippet
 local ms = ls.multi_snippet
 
 return {
+  s(
+    { trig = 'vtt' },
+    fmt(
+      [[
+  WEBVTT
+
+  00:11.000 --> 00:13.000
+  <v Roger Bingham>We are in New York City
+
+  00:13.000 --> 00:16.000
+  <v Roger Bingham>We're actually at the Lucern Hotel, just down the street
+  ]],
+      {}
+    )
+  ),
   s({ trig = '()', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta([[(<>)]], { i(1) })),
   s({ trig = '__', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta([[_<>_]], { i(1) })),
   s({ trig = '""', snippetType = 'autosnippet', wordTrig = false, hidden = true }, fmta([["<>"]], { i(1) })),
@@ -52,6 +67,18 @@ return {
 <>
 
 ------------------------------
+  ]],
+      { i(1) }
+    )
+  ),
+  s(
+    { trig = 'tt-json', wordTrig = false },
+    fmta(
+      [[
+{
+  "text": "<>",
+  "attribution": "Guiding Principles"
+},
   ]],
       { i(1) }
     )

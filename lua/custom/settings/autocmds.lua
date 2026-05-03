@@ -45,3 +45,17 @@ vim.api.nvim_create_autocmd('BufReadPost', {
     end
   end,
 })
+
+vim.api.nvim_create_autocmd('BufRead', {
+  pattern = '*.txt',
+  callback = function()
+    vim.opt.textwidth = 0
+  end,
+})
+
+vim.api.nvim_create_autocmd('BufRead', {
+  pattern = '*.typ',
+  callback = function()
+    vim.opt.textwidth = 0
+  end,
+})

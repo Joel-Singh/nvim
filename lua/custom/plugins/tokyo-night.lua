@@ -17,5 +17,12 @@ return { -- You can easily change to a different colorscheme.
     -- Like many other themes, this one has different styles, and you could load
     -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
     vim.cmd.colorscheme 'tokyonight-night'
+
+    local normal_bg = vim.api.nvim_get_hl(0, { name = 'Normal', link = false }).bg
+    vim.api.nvim_set_hl(0, 'MiniStatuslineNormal', { bg = normal_bg })
+    vim.api.nvim_set_hl(0, 'MiniStatuslineDevinfo', { bg = normal_bg })
+    vim.api.nvim_set_hl(0, 'MiniStatuslineFileinfo', { bg = normal_bg })
+    vim.api.nvim_set_hl(0, 'MiniStatuslineFilename', { bg = normal_bg })
+    vim.api.nvim_set_hl(0, 'MiniStatuslineInactive', { bg = normal_bg })
   end,
 }

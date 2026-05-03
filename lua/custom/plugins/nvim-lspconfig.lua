@@ -158,7 +158,6 @@ return {
       },
     }
 
-    vim.lsp.enable 'lua-language-server'
     vim.lsp.config('lua-language-server', {
       cmd = { 'lua-language-server' },
       filetypes = { 'lua' },
@@ -166,7 +165,7 @@ return {
       settings = {
         Lua = {
           diagnostics = {
-            globals = { 'vim' },
+            globals = { 'vim', 'MiniStatusline' },
           },
         },
       },
@@ -186,8 +185,6 @@ return {
       cmd = { 'tinymist' },
       filetypes = { 'typst' },
       settings = {
-        exportPdf = 'onType',
-        outputPath = '/tmp/$name',
         formatterMode = 'typstyle',
         formatterPrintWidth = 64,
         formatterProseWrap = true,
@@ -198,8 +195,14 @@ return {
         },
       },
     })
-    vim.lsp.enable 'tinymist'
 
+    vim.lsp.config('fish_lsp', {})
+
+    vim.lsp.enable 'csharp_ls'
+    vim.lsp.enable 'lua-language-server'
+    vim.lsp.enable 'tinymist'
+    vim.lsp.enable 'basedpyright'
+    vim.lsp.enable 'fish_lsp'
     -- vim.lsp.enable 'rust_analyzer'
     -- vim.lsp.enable 'ccls'
 

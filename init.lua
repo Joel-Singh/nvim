@@ -32,13 +32,14 @@ require('lazy').setup({
   require 'custom.plugins.telescope-symbols',
   require 'custom.plugins.telescope',
   require 'custom.plugins.tokyo-night',
-  -- require 'custom.plugins.treesitter',
+  require 'custom.plugins.treesitter',
   require 'custom.plugins.typst-preview',
   require 'custom.plugins.vim-rooter',
   require 'custom.plugins.vim-sleuth',
   require 'custom.plugins.which-key',
-  require 'custom.plugins.autopairs',
-  -- require 'custom.plugins.debug',
+  require 'custom.plugins.multicursor',
+  require 'custom.plugins.luasnip',
+  require 'custom.plugins.coerce',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
@@ -65,5 +66,3 @@ require 'custom.settings.options'
 require 'custom.settings.autocmds'
 require 'custom.settings.inkscape-commands'
 require 'custom.settings.lua-snip'
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
