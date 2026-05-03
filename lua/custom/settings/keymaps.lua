@@ -31,3 +31,5 @@ vim.keymap.set('n', '<Leader>d', "i<C-r>=systemlist('date')[0]<CR><Esc>", { desc
 
 vim.keymap.set('n', '<C-n>', '<CMD>cnext<CR>', { desc = 'Quickfix Next' })
 vim.keymap.set('n', '<C-p>', '<CMD>cprev<CR>', { desc = 'Quickfix Previous' })
+
+vim.keymap.set('n', '<Leader>O', '<CMD>Oil<CR>', { desc = '[O]il' })
