@@ -38,8 +38,7 @@ require('lazy').setup({
   require 'custom.plugins.vim-sleuth',
   require 'custom.plugins.which-key',
   require 'custom.plugins.autopairs',
-  require 'custom.plugins.debug',
-  require 'custom.plugins.lint',
+  -- require 'custom.plugins.debug',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {
