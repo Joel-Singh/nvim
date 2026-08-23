@@ -119,4 +119,10 @@ Transaction(
       { i(1, 'kind'), i(2, 'cost'), i(3, 'name'), i(4, 'description'), i(5, 'MMM'), i(6, 'DD'), i(7, 'YYYY') }
     )
   ),
+  s(
+    { trig = 'state' },
+    fmta([[let <> = state("<>", <>)]], { i(1), f(function()
+      return tostring(math.random(99999999999999))
+    end), i(2) })
+  ),
 }
