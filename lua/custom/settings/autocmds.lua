@@ -31,8 +31,6 @@ vim.api.nvim_create_autocmd('FocusGained', {
   command = 'silent! sleep 50m | checktime',
 })
 
--- vim.api.nvim_create_autocmd({ 'BufWritePost' }, { pattern = { '*.typ' }, command = 'silent !typst compile % /tmp/current-typ-file.pdf &' })
-
 vim.api.nvim_create_autocmd({ 'VimLeavePre' }, { command = 'mksession! ~/.cache/nvim/session.vim' })
 
 -- Restore cursor to file position in previous editing session

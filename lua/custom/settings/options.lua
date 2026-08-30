@@ -44,3 +44,5 @@ vim.o.cursorline = true
 vim.o.scrolloff = 10
 
 vim.o.confirm = true
+
+vim.lsp.log.set_level(vim.log.levels.OFF)

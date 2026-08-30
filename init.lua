@@ -40,6 +40,7 @@ require('lazy').setup({
   require 'custom.plugins.multicursor',
   require 'custom.plugins.luasnip',
   require 'custom.plugins.coerce',
+  require 'custom.plugins.calendar-picker',
 }, {
   ui = {
     icons = vim.g.have_nerd_font and {} or {

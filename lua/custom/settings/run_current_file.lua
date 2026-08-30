@@ -29,9 +29,16 @@ local function run_current_file()
     local input_file = vim.fn.expand '%:p'
     local typst_file_watch = vim.system { 'typst', 'watch', input_file, output_file }
 
-    vim.system({ 'zathura', output_file }, function()
+    local zathura_process = vim.system({ 'zathura', output_file }, function()
       typst_file_watch:kill 'sigterm'
     end)
+
+    vim.api.nvim_create_autocmd('ExitPre', {
+      callback = function(_)
+        typst_file_watch:kill 'sigterm'
+        zathura_process:kill 'sigterm'
+      end,
+    })
   end
 
   if vim.bo.filetype == 'html' then

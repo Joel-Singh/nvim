@@ -27,7 +27,9 @@ return { -- Collection of various small independent plugins/modules
           local diagnostics = MiniStatusline.section_diagnostics { trunc_width = 5 }
 
           return MiniStatusline.combine_groups {
-            { hl = 'MiniStatuslineDevinfo', strings = { diagnostics } },
+            { hl = 'MiniStatuslineDevinfo', strings = {
+              tostring(#vim.diagnostic.get()),
+            } },
           }
         end,
       },

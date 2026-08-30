@@ -1,6 +1,7 @@
 {
   "LuaSnip": { "branch": "master", "commit": "642b0c595e11608b4c18219e93b88d7637af27bc" },
   "blink.cmp": { "branch": "main", "commit": "78336bc89ee5365633bcf754d93df01678b5c08f" },
+  "calendar-vim": { "branch": "master", "commit": "f2bf2846221954e6a47f6659ff330e1a823c69eb" },
   "coerce.nvim": { "branch": "main", "commit": "b9c88382317d53b0203ce4eda03d0645f8d2e612" },
   "conform.nvim": { "branch": "master", "commit": "18aeab3d63d350dcf44d64c462cc489a3412af40" },
   "coop.nvim": { "branch": "main", "commit": "b156e541316aee14be4ae64c93ed8bddb6d03bc1" },
